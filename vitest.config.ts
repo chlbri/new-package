@@ -6,8 +6,10 @@ import tsconfig from './tsconfig.json';
 export default defineConfig({
   plugins: [aliasTs(tsconfig as any), exclude('**/index.ts')],
   test: {
-    environment: 'node',
-
+    bail: 10,
+    maxConcurrency: 10,
+    passWithNoTests: true,
+    slowTestThreshold: 3000,
     coverage: {
       enabled: true,
       extension: 'ts',
