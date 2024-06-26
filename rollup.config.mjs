@@ -11,6 +11,8 @@ const ignore = [
   '**/*.test-d.ts',
   '**/*.fixtures.ts',
   '**/*.fixture.ts',
+  '**/fixtures.ts',
+  '**/fixture.ts',
   'src/tests/**/*',
   'src/config/**/*',
 ];

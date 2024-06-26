@@ -1,5 +1,5 @@
 {
-  "name": "@bemedev/new-package",
+  "name": "@bemedev///TODO",
   "version": "0.0.1",
   "description": "//TODO",
   "author": {
@@ -47,6 +47,7 @@
     "ci:admin": "pnpm run rm && pnpm run ci",
     "rollup": "rollup -c",
     "build": "pnpm rm:lib && pnpm run rollup",
+    "p-q": "pretty-quick --staged",
     "rm": "rm -rf node_modules pnpm-lock.yaml",
     "rinit": "pnpm run rm && pnpm run config",
     "rinit:off": "pnpm run rm && pnpm run config:off",
@@ -60,29 +61,30 @@
     "lint": "pnpm run prettier && pnpm run eslint --fix",
     "lint-watch": "onchange --await-write-finish 5500 \"**/*\" -- pnpm run lint",
     "prepublishOnly": "",
-    "prepare": "husky"
+    "prepare": "husky",
+    "upgrade": "pnpm upgrade --latest && pnpm add -D eslint@8.57.0"
   },
   "devDependencies": {
-    "@bemedev/fsf": "^0.7.0",
+    "@bemedev/fsf": "^0.7.3",
     "@bemedev/vitest-alias": "^0.0.3",
-    "@bemedev/vitest-cov-exclude": "^0.0.2",
+    "@bemedev/vitest-exclude": "^0.0.2",
     "@bemedev/vitest-extended": "^0.4.1",
-    "@types/node": "^20.14.2",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
+    "@types/node": "^20.14.9",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
     "@vitest/coverage-v8": "^1.6.0",
-    "@xstate/immer": "^0.3.3",
     "eslint": "^8.57.0",
-    "glob": "^10.4.1",
+    "glob": "^10.4.2",
     "husky": "^9.0.11",
     "onchange": "^7.1.0",
     "prettier": "^3.3.2",
+    "pretty-quick": "^4.0.0",
     "rollup": "^4.18.0",
     "rollup-plugin-node-externals": "^7.1.2",
     "rollup-plugin-tsc-alias": "^1.1.2",
     "rollup-plugin-typescript2": "^0.36.0",
-    "tslib": "^2.6.2",
-    "typescript": "^5.4.5",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.2",
     "vitest": "^1.6.0"
   }
 }
