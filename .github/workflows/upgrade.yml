@@ -5,9 +5,13 @@ on:
     - cron: '*/7 * * * *'
 
 jobs:
-  test:
-    name: Test
+  upgrade:
+    name: Upgrade
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
 
     steps:
       - name: Checkout repo
