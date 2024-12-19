@@ -1,8 +1,6 @@
 name: Upgrade
 
-on:
-  schedule:
-    - cron: '*/7 * * * *'
+on: push
 
 jobs:
   upgrade:
@@ -12,6 +10,9 @@ jobs:
       contents: write
       pull-requests: write
       repository-projects: write
+
+    outputs:
+      pull-request-branch: ${{ steps.cpr.outputs.pull-request-branch }}
 
     steps:
       - name: Checkout repo
@@ -52,7 +53,25 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
+        id: cpr
         with:
           branch: auto/upgrade
           sign-commits: true
           branch-suffix: short-commit-hash
+
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    needs: upgrade
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.upgrade.outputs.pull-request-branch }}
+
+      - name: Empty commit
+        run: git commit --allow-empty -m "Empty-Commit"
+
+      - name: Empty push
+        run: git push -f
