@@ -11,7 +11,7 @@ on:
       - master
       - main
     types:
-      - review_requested
+      - opened
 
 jobs:
   test:
