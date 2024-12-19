@@ -63,6 +63,10 @@ jobs:
     name: CI
     runs-on: ubuntu-latest
     needs: upgrade
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
 
     steps:
       - name: Checkout repo
