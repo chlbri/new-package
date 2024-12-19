@@ -75,6 +75,3 @@ jobs:
         with:
           message: 'Upgrade dependencies'
           add: '.'
-
-      - name: Empty push
-        run: git push -f
