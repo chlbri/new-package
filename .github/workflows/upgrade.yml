@@ -58,4 +58,4 @@ jobs:
           branch-suffix: short-commit-hash
 
   ci:
-    uses: chlbri/new-package/.github/workflows/ci.yml@main
+    uses: chlbri/new-package/.github/workflows/ci.yml
