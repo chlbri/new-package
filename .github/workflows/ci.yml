@@ -8,11 +8,11 @@ on:
         required: false
         default: 'dev'
         type: string
-  push:
-    branches-ignore:
-      - master
-      - main
-  pull_request:
+  # push:
+  #   branches-ignore:
+  #     - master
+  #     - main
+  # pull_request:
 
 jobs:
   test:
