@@ -7,9 +7,13 @@ on:
       - main
 
 jobs:
-  test:
-    name: Test
+  Upgrade:
+    name: Upgrade
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
 
     steps:
       - name: Checkout repo
