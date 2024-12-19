@@ -56,6 +56,3 @@ jobs:
           branch: auto/upgrade
           sign-commits: true
           branch-suffix: short-commit-hash
-
-  ci:
-    uses: chlbri/new-package/.github/workflows/ci.yml
