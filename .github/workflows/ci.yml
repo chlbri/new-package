@@ -6,6 +6,12 @@ on:
     branches-ignore:
       - master
       - main
+  pull_request:
+    branches-ignore:
+      - master
+      - main
+    types:
+      - review_requested
 
 jobs:
   test:
