@@ -43,6 +43,7 @@ jobs:
             hashFiles('**/pnpm-lock.yaml')}}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
