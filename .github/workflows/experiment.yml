@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v4.1.6
-        with: { ref: debug }
+        with:
+          ref: debug
       - name: List files
         run: ls
