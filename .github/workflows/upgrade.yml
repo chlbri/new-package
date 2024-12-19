@@ -71,7 +71,10 @@ jobs:
           ref: ${{ needs.upgrade.outputs.pull-request-branch }}
 
       - name: Empty commit
-        run: git commit --allow-empty -m "Empty-Commit"
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Upgrade dependencies'
+          add: '.'
 
       - name: Empty push
         run: git push -f
