@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4
 
       - name: 'Install node'
         uses: actions/setup-node@v4
@@ -56,3 +56,6 @@ jobs:
           branch: auto/upgrade
           sign-commits: true
           branch-suffix: short-commit-hash
+
+      - name: CI
+        uses: chlbri/new-package/.github/workflows/ci.yml
