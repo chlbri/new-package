@@ -24,39 +24,8 @@ jobs:
       pull-request-branch: ${{ steps.cpr.outputs.pull-request-branch }}
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: 'Install node'
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        id: pnpm-install
-        with:
-          version: 9
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key:
-            ${{ runner.os }}-pnpm-store-${{
-            hashFiles('**/pnpm-lock.yaml')}}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Checkout pnpm repo
+        uses: 'chlbri/pnpmi-action@main'
 
       - name: Upgrade
         run: pnpm run upgrade

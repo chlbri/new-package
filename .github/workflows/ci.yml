@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout pnpm repo
         uses: 'chlbri/pnpmi-action@main'
         with:
           branch: ${{ inputs.branch }}
