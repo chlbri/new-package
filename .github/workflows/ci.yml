@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: 'chlbri/pnpmi-action'
+        uses: 'chlbri/pnpmi-action@main'
         with:
           branch: ${{ inputs.branch }}
 
