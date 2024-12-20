@@ -2,10 +2,10 @@ name: Upgrade
 
 on:
   #region Only for test
-  push:
-    branches-ignore:
-      - master
-      - main
+  # push:
+  #   branches-ignore:
+  #     - master
+  #     - main
   #endregion
 
   schedule:
