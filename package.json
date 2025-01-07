@@ -62,7 +62,7 @@
     "lint:watch": "onchange --await-write-finish 5500 \"**/*\" -- pnpm run lint",
     "prepublishOnly": "",
     "prepare": "husky",
-    "upgrade": "pnpm upgrade --latest && pnpm add -D eslint@8.57.0"
+    "upgrade": "pnpm upgrade --latest"
   },
   "devDependencies": {
     "@bemedev/fsf": "^0.7.3",
