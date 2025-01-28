@@ -1,26 +1,11 @@
-# Beatifull lib
-
-A beautifull description
+## CHANGELOG
 
 <br/>
-
-## Licence
-
-MIT
-
-## CHANGE_LOG
-
-<details>
-
-<summary>
-...
-</summary>
+<br/>
 
 ### Version [0.0.1] --> _date & hour_
 
 - ✨ Première version de la bibliothèque
-
-</details>
 
 <br/>
 

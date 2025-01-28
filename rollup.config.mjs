@@ -8,13 +8,14 @@ import typescript from 'rollup-plugin-typescript2';
 
 const ignore = [
   '**/*.test.ts',
+  '**/*.spec.ts',
   '**/*.test-d.ts',
+  '**/*.spec-d.ts',
   '**/*.fixtures.ts',
   '**/*.fixture.ts',
   '**/fixtures.ts',
   '**/fixture.ts',
-  'src/tests/**/*',
-  'src/config/**/*',
+  'src/__tests__/**/*',
 ];
 
 const input = Object.fromEntries(
