@@ -4,49 +4,46 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'rollup';
 import { circularDependencies } from 'rollup-plugin-circular-dependencies';
 import { nodeExternals } from 'rollup-plugin-node-externals';
-import tscAlias from 'rollup-plugin-tsc-alias';
+import tsConfigPaths from 'rollup-plugin-tsconfig-paths';
 import typescript from 'rollup-plugin-typescript2';
 
-const ignore = [
+const exclude = [
   '**/*.test.ts',
-  '**/*.spec.ts',
   '**/*.test-d.ts',
-  '**/*.spec-d.ts',
   '**/*.fixtures.ts',
-  '**/*.fixture.ts',
   '**/fixtures.ts',
-  '**/fixture.ts',
-  'src/__tests__/**/*',
+  'src/config/**/*.ts',
+  'src/fixtures/**/*.ts',
+  'src/tests/**/*',
+  'src/config/**/*',
 ];
 
+const ignore = [...exclude, '**/*.types.ts', '**/types.ts'];
+
 const input = Object.fromEntries(
-  globSync('src/**/*.ts', {
-    ignore,
-  }).map(file => [
-    // This remove `src/` as well as the file extension from each
-    // file, so e.g. src/nested/foo.js becomes nested/foo
+  globSync('src/**/*.ts', { ignore }).map(file => [
     path.relative(
       'src',
       file.slice(0, file.length - path.extname(file).length),
     ),
-    // This expands the relative paths to absolute paths, so e.g.
-    // src/nested/foo becomes /project/src/nested/foo.js
     fileURLToPath(new URL(file, import.meta.url)),
   ]),
 );
 
 export default defineConfig({
   input,
-
   plugins: [
-    tscAlias(),
+    tsConfigPaths(),
     typescript({
-      tsconfigOverride: {
-        exclude: ignore,
-      },
+      tsconfigOverride: { exclude },
     }),
     circularDependencies({
-      exclude: [],
+      exclude: [
+        '**/types.ts',
+        '**/type.ts',
+        '**/*.types.ts',
+        '**/*.type.ts',
+      ],
     }),
 
     nodeExternals({
@@ -54,24 +51,23 @@ export default defineConfig({
       builtinsPrefix: 'strip',
     }),
   ],
-  external: ['node:path'],
+  // external: ['vitest'],
   output: [
-    {
-      format: 'cjs',
-      sourcemap: true,
-      dir: `lib`,
-      preserveModulesRoot: 'src',
-      preserveModules: true,
-
-      entryFileNames: '[name].cjs',
-    },
     {
       format: 'es',
       sourcemap: true,
-      dir: `lib`,
       preserveModulesRoot: 'src',
+      dir: `lib`,
       preserveModules: true,
       entryFileNames: '[name].js',
+    },
+    {
+      format: 'cjs',
+      sourcemap: true,
+      preserveModulesRoot: 'src',
+      dir: `lib`,
+      preserveModules: true,
+      entryFileNames: '[name].cjs',
     },
   ],
 });
