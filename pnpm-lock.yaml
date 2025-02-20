@@ -67,21 +67,6 @@ importers:
       rollup:
         specifier: ^4.32.1
         version: 4.32.1
-      rollup-plugin-circular-dependencies:
-        specifier: ^1.1.2
-        version: 1.1.2(rollup@4.32.1)
-      rollup-plugin-node-externals:
-        specifier: ^8.0.0
-        version: 8.0.0(rollup@4.32.1)
-      rollup-plugin-tsc-alias:
-        specifier: ^1.1.2
-        version: 1.1.2(rollup@4.32.1)
-      rollup-plugin-tsconfig-paths:
-        specifier: ^1.5.2
-        version: 1.5.2(rollup@4.32.1)(typescript@5.7.3)
-      rollup-plugin-typescript2:
-        specifier: ^0.36.0
-        version: 0.36.0(rollup@4.32.1)(typescript@5.7.3)
       size-limit:
         specifier: ^11.1.6
         version: 11.1.6
