@@ -1,5 +1,5 @@
 {
   "github-actions.workflows.pinned.workflows": [
-    ".github/workflows/upgrade.yml"
+    ".github/workflows/ci.yml"
   ]
 }
