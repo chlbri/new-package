@@ -1,4 +1,4 @@
-name: Publish
+name: Publish-Canary
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   publish:
-    name: Publish
+    name: Publish-Canary
     runs-on: ubuntu-latest
 
     steps:
