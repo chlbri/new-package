@@ -1,2 +1,2 @@
-pnpm run ci
-pnpm run p-q
+npm run ci
+git add .
