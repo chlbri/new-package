@@ -89,7 +89,9 @@ User will commit manually.
 ## Format
 
 - Date: DD/MM/YYYY (European format)
-- Time: HH:MM (24h format)
+- Time: HH:MM (24h format, **GMT/UTC timezone only**)
+- **IMPORTANT**: Always use GMT/UTC time for version timestamps in
+  CHANGELOG.md
 - English commit messages
 - French allowed in CHANGELOG details
 - Actions: Add, Fix, Remove, Update, Enhance, Refactor
