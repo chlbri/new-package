@@ -10,17 +10,7 @@ MIT
 
 ## CHANGE_LOG
 
-<details>
-
-<summary>
-...
-</summary>
-
-### Version [0.0.1] --> _date & hour_
-
-- ✨ Première version de la bibliothèque
-
-</details>
+Read [CHANGE_LOG.md](CHANGE_LOG.md) for more details about the changes.
 
 <br/>
 
