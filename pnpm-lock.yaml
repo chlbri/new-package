@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@bemedev/dev-utils':
-        specifier: ^0.3.1
-        version: 0.3.1(@vitest/coverage-v8@3.2.4(vitest@3.2.4))(rolldown@1.0.0-rc.12)(rollup@4.60.0)(typescript@6.0.2)(vitest@3.2.4)
+        specifier: ^0.3.2
+        version: 0.3.2(@vitest/coverage-v8@3.2.4(vitest@3.2.4))(rolldown@1.0.0-rc.12)(rollup@4.60.0)(typescript@6.0.2)(vitest@3.2.4)
       '@size-limit/file':
         specifier: ^12.0.1
         version: 12.0.1(size-limit@12.0.1)
@@ -90,8 +90,8 @@ packages:
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
 
-  '@bemedev/dev-utils@0.3.1':
-    resolution: {integrity: sha512-RD4rj+XXFSwh9DywDOHfuoLoMfMwFeq8w1SzmcccNhxZUioWBiCTzx0uzeU8zsgHfbtjI2lz886QuvV6ZvcWjA==}
+  '@bemedev/dev-utils@0.3.2':
+    resolution: {integrity: sha512-iKz+2wTkcaOWJ37/74WoDSZDpIskDNJ+MqBtb18edvF7Uf0dPGHVeBTRyiddgvsOMGhHBB32z1zkN1POJQH/sg==}
     engines: {node: '>=24'}
     hasBin: true
     peerDependencies:
@@ -1755,7 +1755,7 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
-  '@bemedev/dev-utils@0.3.1(@vitest/coverage-v8@3.2.4(vitest@3.2.4))(rolldown@1.0.0-rc.12)(rollup@4.60.0)(typescript@6.0.2)(vitest@3.2.4)':
+  '@bemedev/dev-utils@0.3.2(@vitest/coverage-v8@3.2.4(vitest@3.2.4))(rolldown@1.0.0-rc.12)(rollup@4.60.0)(typescript@6.0.2)(vitest@3.2.4)':
     dependencies:
       '@vitest/coverage-v8': 3.2.4(vitest@3.2.4)
       cmd-ts: 0.15.0
