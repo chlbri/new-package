@@ -12,4 +12,5 @@ if echo "$commit_msg" | grep -q "\_NO\_CI"; then
 fi
 
 npm run ci
+git add .
 echo "✅ Tests réussis 😎"
