@@ -22,8 +22,8 @@ template:
 <br/>
 ```
 
-Order entries inside the block:
-**Breaking changes → Features → Fixes → Docs → Refactor → Dependencies**
+Order entries inside the block: **Breaking changes → Features → Fixes →
+Docs → Refactor → Dependencies**
 
 ## 3b — Update `README.md`
 
@@ -38,8 +38,8 @@ Update `README.md` **only when at least one of these is true:**
 ### With `--readme` flag
 
 Think deeply about every diff from Step 2. Consider whether any prose,
-example, or table in `README.md` could be improved, even if the bar above is
-not met. Still write nothing if there is genuinely nothing to improve.
+example, or table in `README.md` could be improved, even if the bar above
+is not met. Still write nothing if there is genuinely nothing to improve.
 
 ---
 

@@ -6,15 +6,15 @@ Provide a structured summary of everything done during this run.
 
 List every file that was modified and one-line reason:
 
-| File           | Change                          |
-| -------------- | ------------------------------- |
-| `CHANGELOG.md` | Added entry for version X.Y.Z   |
+| File           | Change                                             |
+| -------------- | -------------------------------------------------- |
+| `CHANGELOG.md` | Added entry for version X.Y.Z                      |
 | `README.md`    | Updated `<section>` — `<reason>` _(if applicable)_ |
 
 ## 2. Commit message
 
-Output a ready-to-paste commit message. **Do not run it** — the user commits
-manually.
+Output a ready-to-paste commit message. **Do not run it** — the user
+commits manually.
 
 ```
 docs: update documentation for version X.Y.Z

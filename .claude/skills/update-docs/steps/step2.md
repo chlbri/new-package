@@ -25,11 +25,11 @@ Use those inferred changes as the diff and continue to Step 3.
 
 ## Decision
 
-| Result                                   | Action                                        |
-| ---------------------------------------- | --------------------------------------------- |
-| No meaningful changes AND no `--force`   | **STOP** — emit Step 4 summary with that note |
-| No meaningful changes AND `--force`      | Continue → [`step3.md`](step3.md)             |
-| Meaningful changes found                 | Continue → [`step3.md`](step3.md)             |
+| Result                                 | Action                                        |
+| -------------------------------------- | --------------------------------------------- |
+| No meaningful changes AND no `--force` | **STOP** — emit Step 4 summary with that note |
+| No meaningful changes AND `--force`    | Continue → [`step3.md`](step3.md)             |
+| Meaningful changes found               | Continue → [`step3.md`](step3.md)             |
 
-> **Meaningful changes** = anything beyond lock-file updates, whitespace, or
-> formatting-only commits.
+> **Meaningful changes** = anything beyond lock-file updates, whitespace,
+> or formatting-only commits.

@@ -13,8 +13,8 @@ bash .claude/skills/update-docs/scripts/check-version.sh
 
 ## Decision
 
-| Result                               | Action                               |
-| ------------------------------------ | ------------------------------------ |
-| Versions **match**                   | **STOP** — docs are up to date       |
+| Result                                    | Action                            |
+| ----------------------------------------- | --------------------------------- |
+| Versions **match**                        | **STOP** — docs are up to date    |
 | `package.json` **greater** than CHANGELOG | Continue → [`step2.md`](step2.md) |
-| `package.json` **less** than CHANGELOG   | **STOP** — warn about rollback    |
+| `package.json` **less** than CHANGELOG    | **STOP** — warn about rollback    |
