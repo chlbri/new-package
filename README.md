@@ -10,7 +10,7 @@ MIT
 
 ## CHANGE_LOG
 
-Read [CHANGE_LOG.md](CHANGE_LOG.md) for more details about the changes.
+Read [CHANGELOG.md](CHANGELOG.md) for more details about the changes.
 
 <br/>
 
