@@ -17,9 +17,7 @@ export default defineConfig({
     logHeapUsage: true,
     coverage: {
       enabled: true,
-      extension: 'ts',
       reportsDirectory: '.coverage',
-      all: true,
       provider: 'v8',
     },
   },
