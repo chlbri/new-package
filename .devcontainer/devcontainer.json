@@ -1,21 +1,15 @@
 {
   "name": "Node.js Library",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
-  // 4 GB RAM for the container
-  "runArgs": [
-    "--memory=4g",
-    "--memory-swap=4g",
-    "--cpus=2"
-  ],
+  // 2 GB RAM for the container
+  "runArgs": ["--memory=2g", "--memory-swap=2g", "--cpus=2"],
   "hostRequirements": {
-    "memory": "4gb"
+    "memory": "2gb"
   },
   // pnpm via corepack (ships with Node 24) + install deps
-  "postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install",
+  "postCreateCommand": "corepack prepare pnpm@latest --activate && pnpm install",
   // Forward vitest --ui port
-  "forwardPorts": [
-    51204
-  ],
+  "forwardPorts": [51204],
   "portsAttributes": {
     "51204": {
       "label": "Vitest UI",
@@ -40,9 +34,7 @@
         "[typescriptreact]": {
           "editor.defaultFormatter": "oxc.oxc-vscode"
         },
-        "coverage-gutters.coverageFileNames": [
-          ".coverage/lcov.info"
-        ],
+        "coverage-gutters.coverageFileNames": [".coverage/lcov.info"],
         "vitest.enable": true,
         "vitest.commandLine": "pnpm run test:only"
       },
@@ -50,23 +42,20 @@
         // TypeScript / JavaScript
         "ms-vscode.vscode-typescript-next",
         "ms-vscode.js-debug",
-        // Lint & format (oxlint + oxfmt)
+        // Lint & format
         "oxc.oxc-vscode",
-        // Prettier
-        "esbenp.prettier-vscode",
         // Testing
         "vitest.explorer",
         // Coverage
+        // cspell:disable-next-line
         "ryanluker.vscode-coverage-gutters",
         // Git
-        "eamodio.gitlens",
         "adam-bender.commit-message-editor",
         // GitHub
         "github.vscode-github-actions",
         "github.copilot",
         "github.copilot-chat",
         // DX
-        "usernamehw.errorlens",
         "streetsidesoftware.code-spell-checker"
       ]
     }
