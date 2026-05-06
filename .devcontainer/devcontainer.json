@@ -1,0 +1,68 @@
+{
+  "name": "Node.js Library",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+  // 4 GB RAM for the container
+  "runArgs": ["--memory=4g", "--memory-swap=4g", "--cpus=2"],
+  "hostRequirements": {
+    "memory": "4gb"
+  },
+  // pnpm via corepack (ships with Node 24) + install deps
+  "postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install",
+  // Forward vitest --ui port
+  "forwardPorts": [51204],
+  "portsAttributes": {
+    "51204": {
+      "label": "Vitest UI",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteEnv": {
+    "NODE_ENV": "development",
+    // Give Node.js ~3.5 GB out of the 4 GB container limit
+    "NODE_OPTIONS": "--max-old-space-size=3584",
+    // pnpm store inside the container (no cross-device issues)
+    "PNPM_HOME": "/home/node/.local/share/pnpm"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[typescript]": {
+          "editor.defaultFormatter": "oxc.oxc-vscode"
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "oxc.oxc-vscode"
+        },
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "typescript.enablePromptUseWorkspaceTsdk": true,
+        "coverage-gutters.coverageFileNames": [".coverage/lcov.info"],
+        "vitest.enable": true,
+        "vitest.commandLine": "pnpm run test:only"
+      },
+      "extensions": [
+        // TypeScript / JavaScript
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.js-debug",
+        // Lint & format (oxlint + oxfmt)
+        "oxc.oxc-vscode",
+        // Prettier
+        "esbenp.prettier-vscode",
+        // Testing
+        "vitest.explorer",
+        // Coverage
+        "ryanluker.vscode-coverage-gutters",
+        // Git
+        "eamodio.gitlens",
+        "adam-bender.commit-message-editor",
+        // GitHub
+        "github.vscode-github-actions",
+        "github.copilot",
+        "github.copilot-chat",
+        // DX
+        "usernamehw.errorlens",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
