@@ -22,8 +22,8 @@
   },
   "remoteEnv": {
     "NODE_ENV": "development",
-    // Give Node.js ~3.5 GB out of the 4 GB container limit
-    "NODE_OPTIONS": "--max-old-space-size=3584",
+    // Give Node.js ~1.5 GB for heap
+    "NODE_OPTIONS": "--max-old-space-size=1536",
     // pnpm store inside the container (no cross-device issues)
     "PNPM_HOME": "/home/node/.local/share/pnpm"
   },
@@ -32,12 +32,6 @@
       "settings": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "oxc.oxc-vscode",
-        "[typescript]": {
-          "editor.defaultFormatter": "oxc.oxc-vscode"
-        },
-        "[typescriptreact]": {
-          "editor.defaultFormatter": "oxc.oxc-vscode"
-        },
         "coverage-gutters.coverageFileNames": [".coverage/lcov.info"],
         "vitest.enable": true,
         "vitest.commandLine": "pnpm run test:only"
