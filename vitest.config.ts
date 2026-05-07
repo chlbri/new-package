@@ -4,10 +4,10 @@ import { defineConfig } from 'vitest/config';
 import tsconfig from './tsconfig.json';
 
 export default defineConfig({
-  plugins: [
-    aliasTs(tsconfig as any),
-    exclude({ ignoreCoverageFiles: ['**/index.ts'] }),
-  ],
+  server: {
+    host: '0.0.0.0',
+  },
+  plugins: [aliasTs(tsconfig as any), exclude({})],
   test: {
     bail: 10,
     maxConcurrency: 10,
