@@ -45,7 +45,6 @@
         // Testing
         "vitest.explorer",
         // Coverage
-        // cspell:disable-next-line
         "ryanluker.vscode-coverage-gutters",
         // Git
         "adam-bender.commit-message-editor",

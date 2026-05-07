@@ -9,8 +9,8 @@ export default defineConfig({
   },
   plugins: [aliasTs(tsconfig as any), exclude({})],
   test: {
-    bail: 10,
-    maxConcurrency: 10,
+    bail: 100,
+    maxConcurrency: 30,
     passWithNoTests: true,
     slowTestThreshold: 3000,
     globals: true,
