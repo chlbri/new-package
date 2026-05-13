@@ -6,8 +6,7 @@
   "hostRequirements": {
     "memory": "4gb"
   },
-  // pnpm via corepack (ships with Node 24) + install deps
-  "postCreateCommand": "corepack use pnpm@11.0.8 && pnpm install --frozen-lockfile",
+  "postCreateCommand": "corepack use pnpm@latest && pnpm install --frozen-lockfile",
   // Forward vitest --ui port, also Ollama
   "forwardPorts": [51204, 11434],
   "portsAttributes": {
@@ -39,8 +38,8 @@
       "extensions": [
         // TypeScript / JavaScript
         "ms-vscode.vscode-typescript-next",
-        "ms-vscode.js-debug",
         // Lint & format
+        "dbaeumer.vscode-eslint",
         "oxc.oxc-vscode",
         // Testing
         "vitest.explorer",
@@ -50,8 +49,15 @@
         "adam-bender.commit-message-editor",
         // GitHub
         "github.vscode-github-actions",
-        "github.copilot",
-        "github.copilot-chat"
+        "github.vscode-pull-request-github",
+        // Code utilities
+        "formulahendry.code-runner",
+        "fill-labs.dependi",
+        "orta.vscode-twoslash-queries",
+        "typescriptteam.native-preview",
+        // Language packs
+        "ms-ceintl.vscode-language-pack-fr",
+        "anthropic.claude-code"
       ]
     }
   }
