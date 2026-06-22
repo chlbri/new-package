@@ -50,7 +50,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@bemedev/dev-utils": "^0.8.1",
+    "@bemedev/dev-utils": "^0.8.2",
     "@size-limit/file": "^12.1.0",
     "@types/node": "^26.0.0",
     "@vitest/coverage-v8": "^4.1.9",
@@ -59,8 +59,8 @@
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "onchange": "^7.1.0",
-    "oxfmt": "^0.55.0",
-    "oxlint": "^1.70.0",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0",
     "prettier": "^3.8.4",
     "pretty-quick": "^4.2.2",
     "rolldown": "1.1.2",
