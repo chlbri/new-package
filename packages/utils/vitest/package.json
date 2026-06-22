@@ -1,5 +1,5 @@
 {
-  "name": "shared-vitest",
+  "name": "@bemedev/shared-vitest",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -12,10 +12,11 @@
   "scripts": {
     "build": "pnpm run rm:lib && pnpm run rolldown",
     "rm:lib": "pnpx rimraf ./lib",
-    "rolldown": "rolldown -c"
+    "rolldown": "rolldown -c",
+    "_ci": "pnpm run build"
   },
   "dependencies": {
-    "@bemedev/dev-utils": "^0.8.0",
+    "@bemedev/dev-utils": "^0.8.1",
     "vitest": "^4.1.9"
   },
   "devDependencies": {

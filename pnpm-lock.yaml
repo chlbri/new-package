@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@bemedev/dev-utils':
-        specifier: ^0.8.0
-        version: 0.8.0(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
+        specifier: ^0.8.1
+        version: 0.8.1(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
       '@size-limit/file':
         specifier: ^12.1.0
         version: 12.1.0(size-limit@12.1.0)
@@ -71,9 +71,9 @@ importers:
       '@bemedev/core':
         specifier: workspace:^
         version: link:../../core
-      shared-vitest:
+      '@bemedev/shared-vitest':
         specifier: workspace:^
-        version: link:../../../utils/vitest
+        version: link:../../utils/vitest
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -81,14 +81,14 @@ importers:
   packages/core:
     devDependencies:
       '@bemedev/dev-utils':
-        specifier: ^0.8.0
-        version: 0.8.0(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
+        specifier: ^0.8.1
+        version: 0.8.1(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
+      '@bemedev/shared-vitest':
+        specifier: workspace:^
+        version: link:../utils/vitest
       rolldown:
         specifier: ^1.1.2
         version: 1.1.2
-      shared-vitest:
-        specifier: workspace:^
-        version: link:../../utils/vitest
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -96,11 +96,11 @@ importers:
         specifier: 4.1.9
         version: 4.1.9(@types/node@26.0.0)(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))
 
-  utils/vitest:
+  packages/utils/vitest:
     dependencies:
       '@bemedev/dev-utils':
-        specifier: ^0.8.0
-        version: 0.8.0(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
+        specifier: ^0.8.1
+        version: 0.8.1(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
       vitest:
         specifier: ^4.1.9
         version: 4.1.9(@types/node@26.0.0)(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))
@@ -135,16 +135,16 @@ packages:
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
 
-  '@bemedev/dev-utils@0.8.0':
-    resolution: {integrity: sha512-JSrkC65W/+nacRmCkFeLHEfHw2FH8Bllf3gaT67Iu/RQSWWSdSe+5TYeeRm9CIF4aRcTV+NS1P+onedGuqONwQ==}
+  '@bemedev/dev-utils@0.8.1':
+    resolution: {integrity: sha512-HwlNnJZAnlbnefgcxWa45NT/fMIo3Rf/LgeoCSkPM6lMkrLTywn+feZd4WJTbWirrdyllHjAhSFxn+8AGjePPA==}
     engines: {node: '>=24'}
     hasBin: true
     peerDependencies:
-      '@vitest/coverage-v8': 4.1.5
-      '@vitest/ui': 4.1.5
+      '@vitest/coverage-v8': 4.1.9
+      '@vitest/ui': 4.1.9
       rolldown: 1.0.0-rc.17
       typescript: ^6.0.3
-      vitest: 4.1.5
+      vitest: 4.1.9
 
   '@blakeembrey/deque@1.0.5':
     resolution: {integrity: sha512-6xnwtvp9DY1EINIKdTfvfeAtCYw4OqBZJhtiqkT3ivjnEfa25VQ3TsKvaFfKm8MyGIEfE95qLe+bNEt3nB0Ylg==}
@@ -1820,7 +1820,7 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
-  '@bemedev/dev-utils@0.8.0(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)':
+  '@bemedev/dev-utils@0.8.1(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)':
     dependencies:
       '@vitest/coverage-v8': 4.1.9(vitest@4.1.9)
       '@vitest/ui': 4.1.9(vitest@4.1.9)

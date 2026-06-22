@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@bemedev/core": "workspace:^",
-    "shared-vitest": "workspace:^",
+    "@bemedev/shared-vitest": "workspace:^",
     "typescript": "^6.0.3"
   }
 }

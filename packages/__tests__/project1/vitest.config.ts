@@ -1,4 +1,4 @@
-import { shared } from 'shared-vitest';
+import { shared } from '@bemedev/shared-vitest';
 
 export default shared({
   test: {

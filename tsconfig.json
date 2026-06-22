@@ -5,7 +5,6 @@
     "target": "ESNext",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./lib",
     "resolveJsonModule": true,
     "strict": true,
     "noImplicitReturns": true,

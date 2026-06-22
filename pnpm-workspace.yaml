@@ -1,8 +1,10 @@
 packages:
-  - "packages/core"
-  - "packages/__tests__/project1"
-  - "utils/vitest"
-
+  - 'packages/core'
+  - 'packages/__tests__/project1'
+  - 'packages/utils/vitest'
 
 allowBuilds:
   esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@bemedev/dev-utils@0.8.1'

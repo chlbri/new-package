@@ -1,10 +1,12 @@
 import { defineConfig, type ViteUserConfig } from 'vitest/config';
-import { aliasTs } from '@bemedev/dev-utils/vitest-alias';
 
 export const shared = (conf: ViteUserConfig) =>
   defineConfig({
+    resolve: {
+      tsconfigPaths: true,
+    },
+
     ...conf,
-    plugins: [aliasTs(), ...(conf.plugins ?? [])],
 
     test: {
       globals: true,
@@ -14,6 +16,7 @@ export const shared = (conf: ViteUserConfig) =>
         NODE_ENV: 'test',
         ...(conf.test?.env ?? {}),
       },
+
       ...conf.test,
     },
   });
