@@ -13,7 +13,12 @@
     "build": "pnpm run rm:lib && pnpm run rolldown",
     "rm:lib": "pnpx rimraf ./lib",
     "rolldown": "rolldown -c",
-    "_ci": "pnpm run build"
+    "_ci": "pnpm run lint && pnpm run build",
+    "fmt": "oxfmt",
+    "lint": "oxlint --fix && pnpm run fmt",
+    "pretest": "pnpm run build",
+    "test": "echo \"No tests needed\"",
+    "posttest": "pnpm run fmt"
   },
   "dependencies": {
     "@bemedev/dev-utils": "^0.8.1",

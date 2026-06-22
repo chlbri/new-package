@@ -4,9 +4,11 @@
   "type": "module",
   "scripts": {
     "test": "vitest run",
+    "fmt": "oxfmt",
+    "lint": "oxlint --fix && pnpm run fmt",
     "posttest": "exit 0",
     "test:only": "vitest run --no-coverage",
-    "_ci": "pnpm run test"
+    "_ci": "pnpm run lint && pnpm run test"
   },
   "devDependencies": {
     "@bemedev/core": "workspace:^",
