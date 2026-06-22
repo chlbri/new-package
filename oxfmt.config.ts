@@ -5,6 +5,7 @@ export default defineConfig({
   bracketSpacing: true,
   endOfLine: 'lf',
   htmlWhitespaceSensitivity: 'css',
+  jsxSingleQuote: true,
   bracketSameLine: false,
   printWidth: 75,
   proseWrap: 'always',
