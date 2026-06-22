@@ -12,7 +12,7 @@
   "scripts": {
     "build": "pnpm run rm:lib && pnpm run rolldown",
     "rm:lib": "pnpx rimraf ./lib",
-    "test": "vitest run --project core",
+    "test": "vitest run",
     "fmt": "oxfmt",
     "lint": "oxlint --fix && pnpm run fmt",
     "pretest": "pnpm run build && pnpm run size",
