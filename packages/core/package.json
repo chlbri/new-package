@@ -1,0 +1,43 @@
+{
+  "name": "@bemedev/core",
+  "version": "0.0.1",
+  "description": "Core package for the monorepo",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "pnpm run rm:lib && pnpm run rolldown",
+    "rm:lib": "pnpx rimraf ./lib",
+    "test": "vitest run --project core",
+    "pretest": "pnpm run build && pnpm run size",
+    "posttest": "exit 0",
+    "test:only": "pnpm run test --no-coverage",
+    "_ci": "pnpm run test",
+    "size": "size-limit",
+    "rolldown": "rolldown -c"
+  },
+  "devDependencies": {
+    "@bemedev/dev-utils": "^0.8.0",
+    "rolldown": "1.1.2",
+    "typescript": "^6.0.3",
+    "vitest": "4.1.9"
+  },
+  "size-limit": [
+    {
+      "path": "lib/**/*.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/**/*.d.ts",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/**/*.cjs",
+      "limit": "10kb"
+    }
+  ]
+}

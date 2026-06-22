@@ -1,2 +1,6 @@
+packages:
+  - "packages/core"
+  - "packages/__tests__/project1"
+
 allowBuilds:
   esbuild: true

@@ -1,5 +1,4 @@
 {
-  "include": ["src/**/*"],
   "compilerOptions": {
     "lib": ["dom", "esnext"],
     "importHelpers": true,
@@ -14,7 +13,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "moduleResolution": "Bundler",
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "node"],
     "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,

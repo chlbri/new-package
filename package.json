@@ -1,7 +1,8 @@
 {
-  "name": "@bemedev///TODO",
+  "name": "@bemedev/new-package-monorepo",
   "version": "0.0.1",
-  "description": "//TODO",
+  "private": true,
+  "description": "Monorepo workspace root",
   "author": {
     "email": "bri_lvi@icloud.com",
     "name": "chlbri",
@@ -9,13 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "//TODO"
+    "url": "https://github.com/chlbri/new-package"
   },
   "license": "MIT",
   "type": "module",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "module": "lib/index.js",
   "maintainers": [
     {
       "email": "bri_lvi@icloud.com",
@@ -30,81 +28,47 @@
       "url": "https://bemedev.vercel.app"
     }
   ],
-  "keywords": [
-    "//TODO"
-  ],
-  "files": [
-    "lib",
-    "public"
-  ],
   "engines": {
     "node": ">=24"
   },
   "scripts": {
-    "_preconfig": "chmod +x .husky/commit-msg",
-    "build": "pnpm run rm:lib && pnpm run rolldown",
-    "_ci": "pnpm run config && pnpm run lint && pnpm run test",
-    "ci": "CI_START=$(date +%s) && pnpm run _ci && echo \"\n✅ CI takes $(($(date +%s) - CI_START))s\n\"",
-    "ci:off": "CI_START=$(date +%s) && pnpm run config:off && pnpm run lint && pnpm run test && echo \"\n✅ CI takes $(($(date +%s) - CI_START))s\n\"",
-    "ci:admin": "pnpm run rm && pnpm run upgrade:fast && pnpm run ci",
-    "config": "pnpm install",
-    "config:off": "pnpm run config --offline",
-    "_lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "lint": "pnpm run fmt && pnpm run lint:fix",
-    "lint:watch": "onchange --await-write-finish 1500 -d 10000 -v \"**/*.ts\" -- pnpm run lint",
-    "build:watch": "onchange --await-write-finish 1500 -d 10000 -v \"**/*.ts\" -- pnpm run build",
-    "p-q": "pretty-quick",
-    "posttest": "pnpm run fmt",
-    "prepare": "husky",
-    "prepublishOnly": "",
-    "pretest": "pnpm run build && pnpm run size",
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check",
+    "pnpm:devPreinstall": "node -e \"const fs=require('fs'); const pkg=JSON.parse(fs.readFileSync('./package.json')); const version=require('child_process').execSync('pnpm -v').toString().trim(); pkg.packageManager='pnpm@' + version; fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2) + '\\n');\"",
+    "build": "pnpm -r --sort run build",
+    "config": "pnpm i",
+    "rimraf": "pnpx rimraf -rf",
     "rinit": "pnpm run rm && pnpm run config",
-    "rinit:off": "pnpm run rm && pnpm run config:off",
-    "rm": "pnpx rimraf ./node_modules ./pnpm-lock.yaml",
-    "rm:lib": "pnpx rimraf ./lib",
-    "rolldown": "rolldown -c",
-    "test:coverage": "vitest run",
-    "test": "pnpm run test:coverage",
-    "test:only": "pnpm run test:coverage --no-coverage",
-    "test:ui": "vitest --ui",
-    "test:watch": "vitest",
-    "upgrade": "pnpm dlx @bemedev/upgrade-npm-package",
-    "size": "size-limit",
-    "upgrade:fast": "pnpm up --latest"
+    "lint": "pnpm run -r lint",
+    "test": "pnpm run -r test",
+    "pretest": "pnpm run -r pretest",
+    "posttest": "pnpm run -r posttest",
+    "test:only": "pnpm run -r test:only",
+    "_ci": "pnpm install && pnpm run -r _ci",
+    "ci": "CI=$(date +%s) && pnpm run _ci && echo \"\n✅ CI takes $(($(date +%s) - CI))s\n\"",
+    "ci:admin": "CI_ADMIN=$(date +%s) && pnpm run rm && pnpm run up && pnpm run _ci && echo \"\n✅ Admin CI takes $(($(date +%s) - CI_ADMIN))s\n\"",
+    "rm": "pnpm clean lockfile",
+    "up": "pnpm -r update --latest",
+    "prepare": "husky"
   },
-  "size-limit": [
-    {
-      "path": "lib/*.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "lib/*.cjs",
-      "limit": "10 KB"
-    }
-  ],
   "devDependencies": {
-    "@bemedev/dev-utils": "^0.6.11",
+    "@bemedev/dev-utils": "^0.8.0",
     "@size-limit/file": "^12.1.0",
-    "@types/node": "^25.7.0",
-    "@vitest/coverage-v8": "^4.1.6",
-    "@vitest/ui": "4.1.6",
+    "@types/node": "^26.0.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/ui": "4.1.9",
     "glob": "^13.0.6",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "onchange": "^7.1.0",
-    "oxfmt": "^0.49.0",
-    "oxlint": "^1.64.0",
-    "prettier": "^3.8.3",
+    "oxfmt": "^0.55.0",
+    "oxlint": "^1.70.0",
+    "prettier": "^3.8.4",
     "pretty-quick": "^4.2.2",
-    "rolldown": "1.0.0",
+    "rolldown": "1.1.2",
     "size-limit": "^12.1.0",
     "tslib": "^2.8.1",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.6"
+    "vitest": "^4.1.9"
   },
-  "packageManager": "pnpm@11.1.1+sha512.d1fdf5f73c617b64fa1a56a81c3c8dfe0e966e33a6010aa256b517ae77be21d93e05affc0de1a83b0e4f29d569f68b446ae8f068cd7247c0bb3df0fb4d7bdf9a"
+  "packageManager": "pnpm@11.7.0"
 }
