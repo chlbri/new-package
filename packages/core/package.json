@@ -1,13 +1,39 @@
 {
   "name": "@bemedev/core",
   "version": "0.0.1",
-  "description": "Core package for the monorepo",
+  "description": "The package name need to be changed",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "module": "lib/index.js",
   "files": [
     "lib"
+  ],
+  "author": {
+    "email": "bri_lvi@icloud.com",
+    "name": "chlbri",
+    "url": "https://bemedev.vercel.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "//TODO: the new repository"
+  },
+  "maintainers": [
+    {
+      "email": "bri_lvi@icloud.com",
+      "name": "chlbri",
+      "url": "https://bemedev.vercel.app"
+    }
+  ],
+  "contributors": [
+    {
+      "email": "bri_lvi@icloud.com",
+      "name": "chlbri",
+      "url": "https://bemedev.vercel.app"
+    }
+  ],
+  "keywords": [
+    "//TODO:"
   ],
   "scripts": {
     "build": "pnpm run rm:lib && pnpm run rolldown",
@@ -40,7 +66,7 @@
     },
     {
       "path": "lib/**/*.cjs",
-      "limit": "10kb"
+      "limit": "10 kb"
     }
   ]
 }
