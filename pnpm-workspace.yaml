@@ -1,6 +1,8 @@
 packages:
   - "packages/core"
   - "packages/__tests__/project1"
+  - "utils/vitest"
+
 
 allowBuilds:
   esbuild: true

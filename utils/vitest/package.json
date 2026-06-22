@@ -1,0 +1,25 @@
+{
+  "name": "shared-vitest",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "pnpm run rm:lib && pnpm run rolldown",
+    "rm:lib": "pnpx rimraf ./lib",
+    "rolldown": "rolldown -c"
+  },
+  "dependencies": {
+    "@bemedev/dev-utils": "^0.8.0",
+    "vitest": "^4.1.9"
+  },
+  "devDependencies": {
+    "rolldown": "^1.1.2",
+    "typescript": "^6.0.3"
+  }
+}

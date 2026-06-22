@@ -71,6 +71,9 @@ importers:
       '@bemedev/core':
         specifier: workspace:^
         version: link:../../core
+      shared-vitest:
+        specifier: workspace:^
+        version: link:../../../utils/vitest
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -81,14 +84,33 @@ importers:
         specifier: ^0.8.0
         version: 0.8.0(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
       rolldown:
-        specifier: 1.1.2
+        specifier: ^1.1.2
         version: 1.1.2
+      shared-vitest:
+        specifier: workspace:^
+        version: link:../../utils/vitest
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
       vitest:
         specifier: 4.1.9
         version: 4.1.9(@types/node@26.0.0)(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))
+
+  utils/vitest:
+    dependencies:
+      '@bemedev/dev-utils':
+        specifier: ^0.8.0
+        version: 0.8.0(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(rolldown@1.1.2)(rollup@4.60.3)(typescript@6.0.3)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))(vitest@4.1.9)
+      vitest:
+        specifier: ^4.1.9
+        version: 4.1.9(@types/node@26.0.0)(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(vite@8.0.12(@types/node@26.0.0)(esbuild@0.28.1)(tsx@4.22.4))
+    devDependencies:
+      rolldown:
+        specifier: ^1.1.2
+        version: 1.1.2
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
 
 packages:
 

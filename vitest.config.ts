@@ -6,18 +6,8 @@ export default defineConfig({
   },
 
   test: {
-    bail: 100,
-    maxConcurrency: 10,
-    allowOnly: true,
     passWithNoTests: true,
     slowTestThreshold: 3000,
-    environment: 'node',
-    globals: true,
-    logHeapUsage: false,
-
-    env: {
-      NODE_ENV: 'test',
-    },
 
     coverage: {
       enabled: true,

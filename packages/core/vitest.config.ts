@@ -1,10 +1,7 @@
-import { aliasTs } from '@bemedev/dev-utils/vitest-alias';
-import { defineProject } from 'vitest/config';
+import { shared } from 'shared-vitest';
 
-export default defineProject({
-  plugins: [aliasTs()],
+export default shared({
   test: {
     name: 'core',
-    globals: true,
   },
 });

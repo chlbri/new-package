@@ -22,7 +22,8 @@
   },
   "devDependencies": {
     "@bemedev/dev-utils": "^0.8.0",
-    "rolldown": "1.1.2",
+    "rolldown": "^1.1.2",
+    "shared-vitest": "workspace:^",
     "typescript": "^6.0.3",
     "vitest": "4.1.9"
   },
