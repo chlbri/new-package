@@ -11,7 +11,7 @@
     "_ci": "pnpm run lint && pnpm run test"
   },
   "devDependencies": {
-    "@bemedev/core": "workspace:^",
+    "@bemedev/new-package-name-to-change": "workspace:^",
     "@bemedev/shared-vitest": "workspace:^",
     "typescript": "^6.0.3"
   }

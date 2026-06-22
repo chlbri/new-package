@@ -68,7 +68,7 @@ importers:
 
   packages/__tests__/project1:
     devDependencies:
-      '@bemedev/core':
+      '@bemedev/new-package-name-to-change':
         specifier: workspace:^
         version: link:../../core
       '@bemedev/shared-vitest':
