@@ -10,12 +10,24 @@ description:
 Four-step workflow to keep `CHANGELOG.md` and `README.md` in sync after a
 version bump in `package.json`.
 
+## Required input
+
+Before starting, explicitly define the target package directory.
+
+- Required: `PACKAGE_DIR` (example: `packages/app` or `packages/vitest`)
+- The workflow must update docs only in that package:
+  - `${PACKAGE_DIR}/CHANGELOG.md`
+  - `${PACKAGE_DIR}/README.md`
+  - `${PACKAGE_DIR}/package.json`
+- If `PACKAGE_DIR` is missing, stop and ask for it.
+
 ## Flags
 
-| Flag       | Effect                                                               |
-| ---------- | -------------------------------------------------------------------- |
-| `--force`  | Continue to Step 3 even when no meaningful changes are detected      |
-| `--readme` | In Step 3, deeply analyse all diffs and consider README improvements |
+| Flag         | Effect                                                               |
+| ------------ | -------------------------------------------------------------------- |
+| `--force`    | Continue to Step 3 even when no meaningful changes are detected      |
+| `--readme`   | In Step 3, deeply analyse all diffs and consider README improvements |
+| `--no-tests` | Skip running automated tests during the verification phase           |
 
 ## Format Rules
 
@@ -36,3 +48,8 @@ version bump in `package.json`.
 ## Workflow
 
 Start at → [`steps/step1.md`](steps/step1.md)
+
+## NB
+
+README and CHANGELOG should always BE in ENGLISH, NO OTHER LANGUAGE, even
+if the project is primarily in another language.
