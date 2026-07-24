@@ -46,29 +46,29 @@
     "posttest": "pnpm run -r posttest",
     "test:only": "pnpm run -r test:only",
     "rm": "pnpm clean lockfile",
-    "up": "pnpm -r update --latest",
+    "up": "pnpm up -r --latest && pnpm dlx npm-check-updates -w -u --peer --dep peer,optional,prod",
     "prepare": "husky"
   },
   "devDependencies": {
-    "@bemedev/dev-utils": "^0.8.2",
+    "@bemedev/dev-utils": "^1.1.0",
     "@size-limit/file": "^12.1.0",
-    "@types/node": "^26.0.0",
-    "@vitest/coverage-v8": "^4.1.9",
-    "@vitest/ui": "4.1.9",
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/ui": "4.1.10",
     "glob": "^13.0.6",
-    "globals": "^17.6.0",
+    "globals": "^17.7.0",
     "husky": "^9.1.7",
     "onchange": "^7.1.0",
-    "oxfmt": "^0.56.0",
-    "oxlint": "^1.71.0",
-    "prettier": "^3.8.4",
+    "oxfmt": "^0.60.0",
+    "oxlint": "^1.75.0",
+    "prettier": "^3.9.6",
     "pretty-quick": "^4.2.2",
-    "rolldown": "1.1.2",
+    "rolldown": "1.2.0",
     "size-limit": "^12.1.0",
     "tslib": "^2.8.1",
-    "tsx": "^4.22.4",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   },
-  "packageManager": "pnpm@11.7.0"
+  "packageManager": "pnpm@11.17.0"
 }

@@ -21,11 +21,11 @@
     "posttest": "pnpm run fmt"
   },
   "dependencies": {
-    "@bemedev/dev-utils": "^0.8.2",
-    "vitest": "^4.1.9"
+    "@bemedev/dev-utils": "^1.1.0",
+    "vitest": "^4.1.10"
   },
   "devDependencies": {
-    "rolldown": "^1.1.2",
-    "typescript": "^6.0.3"
+    "rolldown": "^1.2.0",
+    "typescript": "^7.0.2"
   }
 }
