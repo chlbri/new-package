@@ -1,12 +1,15 @@
 packages:
   - 'packages/core'
   - 'packages/__tests__/project1'
-  - 'packages/utils/vitest'
 
 allowBuilds:
+  '@parcel/watcher': true
   esbuild: true
+
+nodeLinker: hoisted
 
 minimumReleaseAge: 300
 
 minimumReleaseAgeExclude:
-  - '@bemedev/dev-utils@0.8.2'
+  - '@bemedev/*'
+

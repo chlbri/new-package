@@ -134,8 +134,10 @@ yarn.lock
 .env.production.local.json
 .env.test.local.json
 
-#Apple
+# misc
 **/.DS_Store
+*.pem
+.pnpm-store
 
 #my
 build.npm.ts
@@ -143,3 +145,7 @@ build.npm.js
 
 #vitest
 tsconfig.vitest-temp.json
+
+#tanstack
+.tanstack
+

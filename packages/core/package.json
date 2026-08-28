@@ -40,7 +40,11 @@
     "rm:lib": "pnpx rimraf ./lib",
     "test": "vitest run",
     "fmt": "oxfmt",
-    "lint": "oxlint --fix && pnpm run fmt",
+    "fmt:check": "oxfmt --check",
+    "_lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "lint": "pnpm run fmt && pnpm run lint:fix",
+    "p-q": "pretty-quick",
     "pretest": "pnpm run build && pnpm run size",
     "posttest": "exit 0",
     "test:only": "pnpm run test --no-coverage",
@@ -49,11 +53,12 @@
     "rolldown": "rolldown -c"
   },
   "devDependencies": {
-    "@bemedev/dev-utils": "^1.1.0",
-    "@bemedev/shared-vitest": "workspace:^",
-    "rolldown": "^1.2.0",
+    "@bemedev/dev-utils": "^1.5.0",
+    "@size-limit/file": "^13.0.3",
+    "rolldown": "^1.2.6",
+    "size-limit": "^13.0.3",
     "typescript": "^7.0.2",
-    "vitest": "4.1.10"
+    "vitest": "^4.1.11"
   },
   "size-limit": [
     {

@@ -1,6 +1,4 @@
-/**
- * Just a simple function,
- */
+/** Just a simple function, */
 export default function todo() {
   return 'todo';
 }

@@ -15,10 +15,7 @@
         "close": true
       },
       "hide": true,
-      "runOptions": {
-        "runOn": "folderOpen",
-        "instanceLimit": 1
-      }
+      "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
     },
     {
       "label": "pnpm:install",
@@ -36,13 +33,11 @@
       "detail": "Install deps",
       "hide": true,
       "dependsOn": "pull",
-      "runOptions": {
-        "runOn": "folderOpen",
-        "instanceLimit": 1
-      }
+      "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
     },
+
     {
-      "label": "pnpm:ci",
+      "label": "pnpm:lint",
       "type": "npm",
       "presentation": {
         "echo": true,
@@ -52,15 +47,33 @@
         "clear": true,
         "close": true
       },
-      "script": "ci",
+      "script": "lint",
       "isBackground": false,
       "hide": true,
-      "detail": "CI the package",
+      "detail": "Lint the package",
       "dependsOn": "pnpm:install",
-      "runOptions": {
-        "runOn": "folderOpen",
-        "instanceLimit": 1
-      }
+      "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
+    },
+
+    {
+      "label": "pnpm:test",
+      "type": "npm",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new",
+        "group": "test",
+        "clear": true,
+        "close": true
+      },
+      "group": "test",
+      "script": "test",
+      "isBackground": false,
+      "detail": "Test the package",
+      "dependsOn": "pnpm:lint",
+      "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
     }
   ]
 }
+

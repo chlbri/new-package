@@ -1,7 +1,3 @@
-import { shared } from '@bemedev/shared-vitest';
+import { defineProject } from '@bemedev/dev-utils/vitest-extended';
 
-export default shared({
-  test: {
-    name: 'project1',
-  },
-});
+export default defineProject({ test: { name: 'project1' } });

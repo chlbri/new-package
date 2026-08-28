@@ -7,7 +7,7 @@ export default defineConfig({
   htmlWhitespaceSensitivity: 'css',
   jsxSingleQuote: true,
   bracketSameLine: false,
-  printWidth: 75,
+  printWidth: 85,
   proseWrap: 'always',
   requirePragma: false,
   semi: true,
@@ -16,6 +16,15 @@ export default defineConfig({
   trailingComma: 'all',
   useTabs: false,
   vueIndentScriptAndStyle: true,
+  objectWrap: 'collapse',
+  jsdoc: {
+    keepUnparsableExampleIndent: false,
+    separateTagGroups: true,
+    preferCodeFences: true,
+  },
+  sortTailwindcss: true,
+  sortImports: true,
   sortPackageJson: false,
   ignorePatterns: ['node_modules', 'publish', 'publish_npm', 'lib'],
 });
+
