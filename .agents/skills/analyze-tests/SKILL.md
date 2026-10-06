@@ -14,7 +14,7 @@ should be formatted as a **single-line** or **multi-line** test.
 
 ## Usage
 
-1. Open `.github/skills/analyze_tests/analyze_tests.py`.
+1. Open `.agents/skills/analyze-tests/analyze_tests.py`.
 2. Replace the `tests` list with the candidate inline forms (one string per
    test, written as it would appear on a single line).
 3. Adjust `indent` to match the nesting level (4 spaces per `describe`
@@ -22,7 +22,7 @@ should be formatted as a **single-line** or **multi-line** test.
 4. Run:
 
 ```bash
-python3 .github/skills/analyze_tests/analyze_tests.py
+python3 .agents/skills/analyze-tests/analyze_tests.py
 ```
 
 ## Output

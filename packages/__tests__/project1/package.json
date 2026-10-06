@@ -3,21 +3,22 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "test": "vitest run",
+    "_ci": "pnpm run lint && pnpm run test",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "_lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "lint": "pnpm run fmt && pnpm run lint:fix",
     "p-q": "pretty-quick",
-    "posttest": "exit 0",
-    "test:only": "vitest run --no-coverage",
-    "_ci": "pnpm run lint && pnpm run test"
+    "test": "pnpm run test:coverage --no-coverage",
+    "test:only": "pnpm run test:coverage --no-coverage",
+    "test:coverage": "vitest run --passWithNoTests",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@bemedev/dev-utils": "^1.5.0",
     "@bemedev/new-package-name-to-change": "workspace:^",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.3"
   }
 }

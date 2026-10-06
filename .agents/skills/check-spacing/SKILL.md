@@ -1,7 +1,6 @@
 ---
 name: check-spacing
-description:
-  Detect and report blank-line spacing violations between consecutive
+description: Detect and report blank-line spacing violations between consecutive
   test() calls in test files. Use when checking or enforcing spacing
   conventions in *.test.ts files.
 ---
@@ -14,7 +13,7 @@ test files.
 ## Usage
 
 ```bash
-node .github/skills/check_spacing/check_spacing.mjs <path/to/file.test.ts>
+node .agents/skills/check-spacing/check_spacing.mjs <path/to/file.test.ts>
 ```
 
 ## Rules enforced

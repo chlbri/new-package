@@ -37,28 +37,32 @@
   ],
   "scripts": {
     "build": "pnpm run rm:lib && pnpm run rolldown",
-    "rm:lib": "pnpx rimraf ./lib",
-    "test": "vitest run",
+    "pretest": "pnpm run build",
+    "posttest": "pnpm run size",
+    "_ci": "pnpm run lint && pnpm run test",
+    "ci": "CI_START=$(date +%s) && pnpm run _ci && pnpm run p-q && echo \"\n✅ CI takes $(($(date +%s) - CI_START))s\n\"",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "_lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "lint": "pnpm run fmt && pnpm run lint:fix",
     "p-q": "pretty-quick",
-    "pretest": "pnpm run build && pnpm run size",
-    "posttest": "exit 0",
-    "test:only": "pnpm run test --no-coverage",
-    "_ci": "pnpm run lint && pnpm run test",
+    "rm": "rimraf ./node_modules ./pnpm-lock.yaml",
+    "rm:lib": "rimraf -- lib",
+    "rolldown": "rolldown -c",
     "size": "size-limit",
-    "rolldown": "rolldown -c"
+    "test": "pnpm run test:coverage --no-coverage",
+    "test:only": "pnpm run test:coverage --no-coverage",
+    "test:coverage": "vitest run --passWithNoTests",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@bemedev/dev-utils": "^1.5.0",
-    "@size-limit/file": "^13.0.3",
-    "rolldown": "^1.2.6",
-    "size-limit": "^13.0.3",
+    "@size-limit/file": "^14.1.0",
+    "rolldown": "^1.2.12",
+    "size-limit": "^14.1.0",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.3"
   },
   "size-limit": [
     {
