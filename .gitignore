@@ -149,3 +149,4 @@ tsconfig.vitest-temp.json
 #tanstack
 .tanstack
 
+.vitest/
