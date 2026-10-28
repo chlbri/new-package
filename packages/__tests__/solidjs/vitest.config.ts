@@ -1,3 +1,3 @@
-import { defineProject } from "@bemedev/dev-utils/vitest-extended";
+import { defineProject } from '@bemedev/dev-utils/vitest-extended';
 
-export default defineProject({ test: { name: "solidjs" } });
+export default defineProject({ test: { name: 'solidjs' } });

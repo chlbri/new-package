@@ -11,9 +11,9 @@ pnpm web:dev
 pnpm web:build
 ```
 
-The production client files are generated in `dist/client`. TanStack Start writes
-the SPA entry shell as `_shell.html`; the build script also copies it to
-`index.html`, which Tauri and static web hosts expect.
+The production client files are generated in `dist/client`. TanStack Start writes the
+SPA entry shell as `_shell.html`; the build script also copies it to `index.html`,
+which Tauri and static web hosts expect.
 
 Because this app is configured for a shared client build, do not rely on server-only
 routes or server functions for functionality that must work offline or inside the
