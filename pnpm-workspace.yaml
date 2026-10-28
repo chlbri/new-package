@@ -1,4 +1,6 @@
 packages:
+  - "packages/tanstack-solid-start"
+  - "packages/tauri"
   - "packages/core"
   - "packages/__tests__/project1"
 

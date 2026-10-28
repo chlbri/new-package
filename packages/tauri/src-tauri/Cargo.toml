@@ -1,0 +1,16 @@
+[package]
+name = "bemedev-desktop"
+version = "0.0.1"
+description = "Desktop application for the shared web app"
+authors = ["chlbri"]
+edition = "2021"
+
+[lib]
+name = "bemedev_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }

@@ -56,6 +56,10 @@ typings/
 # Optional npm cache directory
 .npm
 
+# Build output
+**/dist/
+**/target/
+
 # Optional eslint cache
 .eslintcache
 
