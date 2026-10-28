@@ -1,0 +1,25 @@
+{
+  "name": "solidjs-tests",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "_ci": "vp run lint && vp run test",
+    "fmt": "vp fmt",
+    "fmt:check": "vp fmt --check",
+    "_lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "lint": "vp run fmt && vp run lint:fix",
+    "test": "vp run test:coverage --no-coverage",
+    "test:only": "vp run test:coverage --no-coverage",
+    "test:coverage": "vp test run --passWithNoTests",
+    "test:watch": "vp test"
+  },
+  "devDependencies": {
+    "@bemedev/dev-utils": "^1.5.0",
+    "@bemedev/web": "workspace:*",
+    "typescript": "^7.0.2",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
+  }
+}

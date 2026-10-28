@@ -1,0 +1,14 @@
+{
+  "name": "@bemedev/desktop",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "tauri": "tauri",
+    "tauri:icons": "tauri icon src-tauri/icons/app-icon.svg --output src-tauri/icons",
+    "tauri:dev": "pnpm tauri:icons && tauri dev",
+    "tauri:build": "pnpm tauri:icons && tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.9.6"
+  }
+}

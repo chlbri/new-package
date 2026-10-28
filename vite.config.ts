@@ -30,6 +30,9 @@ export default defineConfig({
     env: { NODE_ENV: "test" },
     coverage: { enabled: true, reportsDirectory: ".coverage", provider: "v8" },
 
-    projects: ["packages/__tests__/project1/vitest.config.ts"],
+    projects: [
+      "packages/__tests__/project1/vitest.config.ts",
+      "packages/__tests__/solidjs/vitest.config.ts",
+    ],
   },
 });

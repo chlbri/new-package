@@ -1,8 +1,9 @@
 packages:
-  - "packages/tanstack-solid-start"
-  - "packages/tauri"
+  - "apps/solidjs"
+  - "apps/tauri"
   - "packages/core"
   - "packages/__tests__/project1"
+  - "packages/__tests__/solidjs"
 
 allowBuilds:
   "@parcel/watcher": true
