@@ -58,9 +58,9 @@
   },
   "devDependencies": {
     "@bemedev/dev-utils": "^1.5.0",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@vitest/coverage-v8": "catalog:",
-    "glob": "^13.0.6",
+    "glob": "^14.0.3",
     "globals": "^17.13.0",
     "husky": "^9.1.7",
     "onchange": "^7.1.0",
