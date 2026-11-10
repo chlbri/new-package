@@ -3,14 +3,6 @@ import { defineConfig } from 'vite-plus';
 export default defineConfig({
   pack: {
     entry: ['src/**/*.ts'],
-    ignored: [
-      'src/**/__tests__/**',
-      'src/**/*.test.ts',
-      'src/**/*.test-d.ts',
-      'src/**/*.fixtures.ts',
-      'src/**/fixtures.ts',
-      'src/fixtures/**/*.ts',
-    ],
     format: ['esm'],
     outDir: 'lib',
     root: 'src',
@@ -21,19 +13,24 @@ export default defineConfig({
     fixedExtension: false,
     nodeProtocol: 'strip',
     platform: 'node',
+
+    ignored: [
+      'src/**/__tests__/**',
+      'src/**/*.test.ts',
+      'src/**/*.test-d.ts',
+      'src/**/*.fixtures.ts',
+      'src/**/fixtures.ts',
+      'src/fixtures/**/*.ts',
+    ],
   },
+
   run: {
     tasks: {
       pack: {
         command: 'vp pack',
+
         cache: {
-          input: [
-            'src/**',
-            'package.json',
-            'tsconfig.json',
-            'vite.config.ts',
-            '!**/*.gen.ts',
-          ],
+          input: ['src/**', 'package.json', 'tsconfig.json', '!**/*.gen.ts'],
           output: ['lib/**'],
         },
       },
