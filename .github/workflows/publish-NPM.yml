@@ -16,4 +16,4 @@ jobs:
         ${{ github.ref_name == 'beta' && 'beta' || github.ref_name == 'canary' &&
         'canary' || 'latest' }}
 
-      package: "./packages/no-exist"
+      package: './packages/no-exist'

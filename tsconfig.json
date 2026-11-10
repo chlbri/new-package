@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "ESNext"],
     "importHelpers": true,
     "target": "ESNext",
     "declaration": true,
     "sourceMap": true,
+    "module": "esnext",
     "resolveJsonModule": true,
     "strict": true,
     "noImplicitReturns": true,
@@ -13,12 +14,18 @@
     "noUnusedParameters": true,
     "moduleResolution": "Bundler",
     "types": ["vitest/globals", "node"],
-    "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "noEmit": true,
-    "declarationMap": true
-  }
+    "declarationMap": true,
+    "noErrorTruncation": true
+  },
+  "exclude": [
+    "**/rolldown.config.ts",
+    "**/vitest.config.ts",
+    "**/vite.config.ts",
+    "**/vitest.setup.ts"
+  ]
 }

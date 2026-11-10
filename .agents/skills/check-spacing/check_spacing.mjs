@@ -1,7 +1,7 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 const [, , filePath] = process.argv;
-const lines = readFileSync(filePath, "utf8").split("\n");
+const lines = readFileSync(filePath, 'utf8').split('\n');
 
 const tests = [];
 let i = 0;
@@ -10,22 +10,22 @@ while (i < lines.length) {
   if (/^\s+test(?:\.\w+)*\(/.test(line)) {
     const isSingle = /^\s+test(?:\.\w+)*\(.*\);\s*(?:\/\/.*)?$/.test(line);
     if (isSingle) {
-      tests.push({ lineNum: i + 1, type: "single", endLine: i + 1 });
+      tests.push({ lineNum: i + 1, type: 'single', endLine: i + 1 });
       i++;
     } else {
       let braceDepth = 0;
       let end = i;
       for (let k = i; k < lines.length; k++) {
         for (const ch of lines[k]) {
-          if (ch === "{") braceDepth++;
-          if (ch === "}") braceDepth--;
+          if (ch === '{') braceDepth++;
+          if (ch === '}') braceDepth--;
         }
-        if (k > i && braceDepth === 0 && lines[k].includes(");")) {
+        if (k > i && braceDepth === 0 && lines[k].includes(');')) {
           end = k;
           break;
         }
       }
-      tests.push({ lineNum: i + 1, type: "multi", endLine: end + 1 });
+      tests.push({ lineNum: i + 1, type: 'multi', endLine: end + 1 });
       i = end + 1;
     }
   } else {
@@ -58,7 +58,7 @@ for (let x = 0; x < tests.length - 1; x++) {
     }
   }
   const gap = blankCount;
-  const bothSingle = t1.type === "single" && t2.type === "single";
+  const bothSingle = t1.type === 'single' && t2.type === 'single';
   const expected = bothSingle ? 0 : 1;
   if (gap !== expected) {
     violations++;
@@ -71,5 +71,5 @@ for (let x = 0; x < tests.length - 1; x++) {
     console.log(`  line ${t2.lineNum}: ${lines[t2.lineNum - 1].trim()}`);
   }
 }
-if (violations === 0) console.log("No spacing violations found.");
+if (violations === 0) console.log('No spacing violations found.');
 else console.log(`\n${violations} violation(s) total.`);

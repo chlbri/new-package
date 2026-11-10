@@ -1,23 +1,199 @@
-import { defineConfig } from "vite-plus";
-
-import fmt from "./oxfmt.config";
-import lint from "./oxlint.config";
+import { defineConfig, defaultExclude } from 'vite-plus';
 
 export default defineConfig({
-  resolve: { tsconfigPaths: true },
-  server: { host: "0.0.0.0" },
-  fmt,
-
-  lint: {
-    jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
-    options: { typeAware: true, typeCheck: true },
-    ...lint,
+  fmt: {
+    arrowParens: 'avoid',
+    bracketSpacing: true,
+    bracketSameLine: false,
+    endOfLine: 'lf',
+    htmlWhitespaceSensitivity: 'css',
+    jsxSingleQuote: true,
+    objectWrap: 'collapse',
+    printWidth: 85,
+    proseWrap: 'always',
+    requirePragma: false,
+    semi: true,
+    singleQuote: true,
+    sortPackageJson: false,
+    sortTailwindcss: true,
+    tabWidth: 2,
+    trailingComma: 'all',
+    useTabs: false,
+    vueIndentScriptAndStyle: true,
+    ignorePatterns: ['node_modules', 'publish', 'publish_npm', 'lib'],
   },
 
+  lint: {
+    plugins: ['typescript'],
+    jsPlugins: [{ name: 'vite-plus', specifier: 'vite-plus/oxlint-plugin' }],
+    categories: { correctness: 'off' },
+    env: { builtin: true, node: true },
+
+    ignorePatterns: [
+      '**/node_modules',
+      '**/publish',
+      '**/dist',
+      '**/lib',
+      '**/publish_npm',
+      '**/*.typegen.ts',
+      '**/*.test-d.ts',
+      '**/libs/bemedev/*',
+    ],
+
+    options: { typeAware: true, typeCheck: true },
+
+    rules: {
+      'vite-plus/prefer-vite-plus-imports': 'error',
+      'constructor-super': 'error',
+      'for-direction': 'error',
+      'no-async-promise-executor': 'error',
+      'no-case-declarations': 'error',
+      'no-class-assign': 'error',
+      'no-compare-neg-zero': 'error',
+      'no-cond-assign': 'error',
+      'no-const-assign': 'error',
+      'no-constant-binary-expression': 'error',
+      'no-constant-condition': 'error',
+      'no-control-regex': 'error',
+      'no-debugger': 'error',
+      'no-delete-var': 'error',
+      'no-dupe-class-members': 'error',
+      'no-dupe-else-if': 'error',
+      'no-dupe-keys': 'error',
+      'no-duplicate-case': 'error',
+      'no-empty': 'error',
+      'no-empty-character-class': 'error',
+      'no-empty-pattern': 'error',
+      'no-empty-static-block': 'error',
+      'no-ex-assign': 'error',
+      'no-extra-boolean-cast': 'error',
+      'no-fallthrough': 'error',
+      'no-func-assign': 'error',
+      'no-global-assign': 'error',
+      'no-import-assign': 'error',
+      'no-invalid-regexp': 'error',
+      'no-irregular-whitespace': 'error',
+      'no-loss-of-precision': 'error',
+      'no-misleading-character-class': 'error',
+      'no-new-native-nonconstructor': 'error',
+      'no-nonoctal-decimal-escape': 'error',
+      'no-obj-calls': 'error',
+      'no-prototype-builtins': 'error',
+      'no-redeclare': 'error',
+      'no-regex-spaces': 'error',
+      'no-self-assign': 'error',
+      'no-setter-return': 'error',
+      'no-shadow-restricted-names': 'error',
+      'no-sparse-arrays': 'error',
+      'no-this-before-super': 'error',
+      'no-unassigned-vars': 'error',
+      'no-unexpected-multiline': 'error',
+      'no-unsafe-finally': 'error',
+      'no-unsafe-negation': 'error',
+      'no-unsafe-optional-chaining': 'error',
+      'no-unused-labels': 'error',
+      'no-unused-private-class-members': 'error',
+      'no-unused-vars': 'error',
+      'no-useless-backreference': 'error',
+      'no-useless-catch': 'error',
+      'no-useless-escape': 'error',
+      'no-with': 'error',
+      'preserve-caught-error': 'error',
+      'require-yield': 'error',
+      'use-isnan': 'error',
+      'valid-typeof': 'error',
+      'typescript/ban-ts-comment': 'error',
+      'no-array-constructor': 'error',
+      'typescript/await-thenable': 'off',
+      'typescript/no-duplicate-enum-values': 'error',
+      'typescript/no-empty-object-type': 'error',
+      'typescript/no-extra-non-null-assertion': 'error',
+      'typescript/no-misused-new': 'error',
+      'typescript/no-namespace': 'error',
+      'typescript/no-non-null-asserted-optional-chain': 'error',
+      'typescript/no-require-imports': 'error',
+      'typescript/no-this-alias': 'error',
+      'typescript/no-unnecessary-type-constraint': 'error',
+      'typescript/no-unsafe-declaration-merging': 'error',
+      'typescript/no-unsafe-function-type': 'error',
+      'no-unused-expressions': 'error',
+      'typescript/no-wrapper-object-types': 'error',
+      'typescript/prefer-as-const': 'error',
+      'typescript/prefer-namespace-keyword': 'error',
+      'typescript/triple-slash-reference': 'error',
+    },
+
+    overrides: [
+      {
+        files: ['**/*.ts', '**/*.tsx'],
+
+        rules: {
+          'constructor-super': 'off',
+          'no-class-assign': 'off',
+          'no-const-assign': 'off',
+          'no-dupe-class-members': 'off',
+          'no-dupe-keys': 'off',
+          'no-func-assign': 'off',
+          'no-import-assign': 'off',
+          'no-new-native-nonconstructor': 'off',
+          'no-obj-calls': 'off',
+          'no-redeclare': 'off',
+          'no-setter-return': 'off',
+          'no-this-before-super': 'off',
+          'no-unsafe-negation': 'off',
+          'no-var': 'error',
+          'no-with': 'off',
+          'prefer-const': 'error',
+          'prefer-rest-params': 'error',
+          'prefer-spread': 'error',
+        },
+      },
+    ],
+  },
+
+  resolve: { tsconfigPaths: true },
+
   run: {
-    cache: {
-      scripts: true, // Cache package.json scripts (default: false)
-      tasks: true, // Cache task definitions (default: true)
+    tasks: {
+      'test:only': {
+        command: 'VSCODE_NONCE= COPILOT_DEBUG_NONCE= vp test --silent',
+
+        cache: {
+          input: [
+            '**/vitest.setup.ts',
+            '**/vite.config.ts',
+            'packages/__tests__/*/src/**/*.ts',
+            'apps/*/src/**/*.ts',
+            'apps/*/vite.config.ts',
+
+            '!**/*.gen.ts',
+          ],
+
+          output: ['.coverage/**'],
+          env: [],
+        },
+      },
+
+      size: {
+        command: 'size-limit --silent',
+        cache: { input: ['.size-limit.ts', 'packages/*/lib/**'], output: [] },
+      },
+
+      lint: {
+        command: 'vp fmt && vp lint --fix',
+
+        cache: {
+          input: [
+            'vite.config.ts',
+            'packages/**/src/**',
+            'apps/*/src/**',
+
+            '!**/*.gen.ts',
+          ],
+
+          output: [],
+        },
+      },
     },
   },
 
@@ -27,9 +203,36 @@ export default defineConfig({
     logHeapUsage: true,
     globals: true,
     typecheck: { enabled: true, ignoreSourceErrors: false },
-    env: { NODE_ENV: "test" },
-    coverage: { enabled: true, reportsDirectory: ".coverage", provider: "v8" },
+    env: { NODE_ENV: 'test' },
+    clearMocks: false,
+    globalSetup: ['vitest.setup.ts'],
 
-    projects: ["packages/__tests__/project1/vitest.config.ts"],
+    coverage: {
+      enabled: true,
+      reportsDirectory: '.coverage',
+      provider: 'v8',
+      exclude: [
+        ...defaultExclude,
+        '**/types.ts',
+        '**/*.example.ts',
+        '**/*.types.ts',
+        '**/*.fixtures.ts',
+        '**/fixtures/**',
+        '**/*.machine.ts',
+        '**/*.fsm.ts',
+        '**/experimental.ts',
+        '**/src/utils/nothing.ts',
+        '**/fixtures.ts',
+        '**/libs/bemedev/**/*',
+        '**/fixture.ts',
+        '**/*.fixture.ts',
+        '**/test.ts',
+        '**/src/core/helpers/**',
+        '**/vitest.setup.ts',
+        '**/lib/_virtual/**',
+      ],
+    },
+
+    projects: ['packages/__tests__/project1', 'packages/__tests__/solidjs'],
   },
 });

@@ -1,36 +1,39 @@
 packages:
-  - "packages/core"
-  - "packages/__tests__/project1"
+  - 'apps/solidjs'
+  - 'apps/tauri'
+  - 'packages/core'
+  - 'packages/__tests__/project1'
+  - 'packages/__tests__/solidjs'
 
 allowBuilds:
-  "@parcel/watcher": true
+  '@parcel/watcher': true
   esbuild: true
 
 nodeLinker: hoisted
 minimumReleaseAge: 300
 
 minimumReleaseAgeExclude:
-  - "@bemedev/*"
+  - '@bemedev/*'
   - vite-plus
-  - "@voidzero-dev/*"
+  - '@voidzero-dev/*'
   - oxlint
-  - "@oxlint/*"
+  - '@oxlint/*'
   - oxlint-tsgolint
-  - "@oxlint-tsgolint/*"
+  - '@oxlint-tsgolint/*'
   - oxfmt
-  - "@oxfmt/*"
+  - '@oxfmt/*'
   - vitest
-  - "@vitest/*"
+  - '@vitest/*'
 
 catalog:
   vite: npm:@voidzero-dev/vite-plus-core@1.5.0
   vitest: 5.1.0
   vite-plus: 1.5.0
-  "@vitest/coverage-v8": 5.1.0
+  '@vitest/coverage-v8': 5.1.0
 
 overrides:
-  vite@*: "catalog:"
-  vitest@*: "catalog:"
+  vite@*: 'catalog:'
+  vitest@*: 'catalog:'
 
 peerDependencyRules:
   allowAny:
@@ -38,5 +41,5 @@ peerDependencyRules:
     - vitest
 
   allowedVersions:
-    vite: "*"
-    vitest: "*"
+    vite: '*'
+    vitest: '*'

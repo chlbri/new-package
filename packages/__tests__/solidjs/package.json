@@ -1,0 +1,22 @@
+{
+  "name": "solidjs-tests",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "p-q": "pretty-quick",
+    "posttest": "vp fmt",
+    "rm:lib": "vp dlx rimraf ./lib",
+    "test:coverage": "vp test run",
+    "test": "vp run test:coverage --no-coverage",
+    "test:only": "vp run test",
+    "test:watch": "vp test"
+  },
+  "devDependencies": {
+    "@bemedev/dev-utils": "^1.5.0",
+    "@bemedev/web": "workspace:*",
+    "typescript": "^7.0.2",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
+  }
+}
