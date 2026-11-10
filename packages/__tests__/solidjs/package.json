@@ -4,15 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "_ci": "vp run lint && vp run test",
-    "fmt": "vp fmt",
-    "fmt:check": "vp fmt --check",
-    "_lint": "vp lint",
-    "lint:fix": "vp lint --fix",
-    "lint": "vp run fmt && vp run lint:fix",
+    "p-q": "pretty-quick",
+    "posttest": "vp fmt",
+    "rm:lib": "vp dlx rimraf ./lib",
+    "test:coverage": "vp test run",
     "test": "vp run test:coverage --no-coverage",
-    "test:only": "vp run test:coverage --no-coverage",
-    "test:coverage": "vp test run --passWithNoTests",
+    "test:only": "vp run test",
     "test:watch": "vp test"
   },
   "devDependencies": {
