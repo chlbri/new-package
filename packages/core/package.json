@@ -52,8 +52,7 @@
     "@size-limit/file": "^14.3.0",
     "size-limit": "^14.3.0",
     "typescript": "^7.0.2",
-    "vite-plus": "catalog:",
-    "vitest": "catalog:"
+    "vite-plus": "catalog:"
   },
   "size-limit": [
     {

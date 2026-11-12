@@ -7,7 +7,7 @@
     "dev": "vp dev",
     "build": "vp build && node scripts/prepare-tauri-assets.mjs",
     "_build": "vp build",
-    "preview": "vite preview"
+    "preview": "vp preview"
   },
   "dependencies": {
     "@tanstack/solid-router": "^1.170.43",
@@ -17,7 +17,6 @@
   "devDependencies": {
     "@types/node": "^22.5.4",
     "typescript": "^7.0.2",
-    "vite": "catalog:",
     "vite-plugin-solid": "^2.11.11"
   }
 }

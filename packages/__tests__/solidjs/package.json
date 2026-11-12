@@ -16,7 +16,6 @@
     "@bemedev/dev-utils": "^1.5.0",
     "@bemedev/web": "workspace:*",
     "typescript": "^7.0.2",
-    "vite-plus": "catalog:",
-    "vitest": "catalog:"
+    "vite-plus": "catalog:"
   }
 }
