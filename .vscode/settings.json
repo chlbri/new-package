@@ -19,6 +19,7 @@
     "**/.pnpm-store/**": true,
     "**/.coverage/**": true
   },
+  "npm.scriptRunner": "vp",
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "[javascript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
   "[javascriptreact]": { "editor.defaultFormatter": "oxc.oxc-vscode" },

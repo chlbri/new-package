@@ -1,5 +1,25 @@
 import { defineConfig, defaultExclude } from 'vite-plus';
 
+const common_ignore = [
+  '**/publish',
+  '**/publish_npm',
+  'apps/**/android/**',
+  'apps/**/ios/**',
+  'apps/**/macos/**',
+  'apps/**/Pods',
+  'apps/**/windows/**',
+  'apps/**/.expo/**',
+  '**/node_modules/**',
+  '**/*.typegen.ts',
+  '**/*.gen.ts',
+  '**/.expo',
+  '**/lib/**',
+  '**/dist/**',
+  '**/libs/bemedev/*',
+];
+
+const common_ignore_reverse = common_ignore.map(p => `!${p}`);
+
 export default defineConfig({
   fmt: {
     arrowParens: 'avoid',
@@ -20,7 +40,7 @@ export default defineConfig({
     trailingComma: 'all',
     useTabs: false,
     vueIndentScriptAndStyle: true,
-    ignorePatterns: ['node_modules', 'publish', 'publish_npm', 'lib'],
+    ignorePatterns: common_ignore,
   },
 
   lint: {
@@ -28,18 +48,7 @@ export default defineConfig({
     jsPlugins: [{ name: 'vite-plus', specifier: 'vite-plus/oxlint-plugin' }],
     categories: { correctness: 'off' },
     env: { builtin: true, node: true },
-
-    ignorePatterns: [
-      '**/node_modules',
-      '**/publish',
-      '**/dist',
-      '**/lib',
-      '**/publish_npm',
-      '**/*.typegen.ts',
-      '**/*.test-d.ts',
-      '**/libs/bemedev/*',
-    ],
-
+    ignorePatterns: common_ignore,
     options: { typeAware: true, typeCheck: true },
 
     rules: {
@@ -148,6 +157,15 @@ export default defineConfig({
           'prefer-spread': 'error',
         },
       },
+      {
+        files: ['apps/rn-desktop/**'],
+        plugins: ['react'],
+        env: { browser: true, node: true },
+      },
+      {
+        files: ['apps/rn-desktop/*.js'],
+        rules: { 'typescript/no-require-imports': 'off' },
+      },
     ],
   },
 
@@ -163,10 +181,7 @@ export default defineConfig({
             '**/vitest.setup.ts',
             '**/vite.config.ts',
             'packages/__tests__/*/src/**/*.ts',
-            'apps/*/src/**/*.ts',
-            'apps/*/vite.config.ts',
-
-            '!**/*.gen.ts',
+            ...common_ignore_reverse,
           ],
 
           output: ['.coverage/**'],
@@ -186,9 +201,8 @@ export default defineConfig({
           input: [
             'vite.config.ts',
             'packages/**/src/**',
-            'apps/*/src/**',
-
-            '!**/*.gen.ts',
+            'apps/*/**',
+            ...common_ignore_reverse,
           ],
 
           output: [],
@@ -233,6 +247,6 @@ export default defineConfig({
       ],
     },
 
-    projects: ['packages/__tests__/project1', 'packages/__tests__/solidjs'],
+    projects: ['packages/__tests__/project1'],
   },
 });

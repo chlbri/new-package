@@ -1,4 +1,4 @@
-//Create task to start npm build at the opening
+// Every step runs through vite-plus (vp) when the folder opens
 {
   "version": "2.0.0",
   "tasks": [
@@ -15,11 +15,14 @@
         "close": true
       },
       "hide": true,
+      "problemMatcher": [],
       "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
     },
     {
-      "label": "pnpm:install",
-      "type": "npm",
+      "label": "vp:install",
+      "type": "shell",
+      "command": "vp",
+      "args": ["install"],
       "presentation": {
         "echo": true,
         "reveal": "never",
@@ -28,17 +31,18 @@
         "clear": false,
         "close": true
       },
-      "script": "config",
-      "isBackground": true,
-      "detail": "Install deps",
+      "detail": "Install deps with vp install",
       "hide": true,
+      "problemMatcher": [],
       "dependsOn": "pull",
       "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
     },
 
     {
-      "label": "pnpm:lint",
-      "type": "npm",
+      "label": "vp:lint",
+      "type": "shell",
+      "command": "vp",
+      "args": ["run", "lint"],
       "presentation": {
         "echo": true,
         "reveal": "silent",
@@ -47,17 +51,18 @@
         "clear": true,
         "close": true
       },
-      "script": "lint",
-      "isBackground": false,
       "hide": true,
-      "detail": "Lint the package",
-      "dependsOn": "pnpm:install",
+      "detail": "Format and lint with vp run lint",
+      "problemMatcher": [],
+      "dependsOn": "vp:install",
       "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
     },
 
     {
-      "label": "pnpm:test",
-      "type": "npm",
+      "label": "vp:test",
+      "type": "shell",
+      "command": "vp",
+      "args": ["test"],
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -68,10 +73,9 @@
         "close": true
       },
       "group": "test",
-      "script": "test",
-      "isBackground": false,
-      "detail": "Test the package",
-      "dependsOn": "pnpm:lint",
+      "detail": "Test the package with vp test",
+      "problemMatcher": [],
+      "dependsOn": "vp:lint",
       "runOptions": { "runOn": "folderOpen", "instanceLimit": 1 }
     }
   ]

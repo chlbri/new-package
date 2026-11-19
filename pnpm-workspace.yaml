@@ -1,9 +1,7 @@
 packages:
-  - 'apps/solidjs'
-  - 'apps/tauri'
+  - 'apps/rn-desktop'
   - 'packages/core'
   - 'packages/__tests__/project1'
-  - 'packages/__tests__/solidjs'
 
 allowBuilds:
   '@parcel/watcher': true
@@ -26,14 +24,16 @@ minimumReleaseAgeExclude:
   - '@vitest/*'
 
 catalog:
-  vite: npm:@voidzero-dev/vite-plus-core@1.6.0
-  vitest: 5.1.0
-  vite-plus: 1.6.0
-  '@vitest/coverage-v8': 5.1.0
+  vite: npm:@voidzero-dev/vite-plus-core@8.3.8000
+  vitest: 5.1.1
+  vite-plus: 1.7.0
+  '@vitest/coverage-v8': 5.1.1
 
 overrides:
   vite@*: 'catalog:'
   vitest@*: 'catalog:'
+  react: 19.2.0
+  react-native: 0.83.10
 
 peerDependencyRules:
   allowAny:
@@ -43,3 +43,7 @@ peerDependencyRules:
   allowedVersions:
     vite: '*'
     vitest: '*'
+
+patchedDependencies:
+  '@expo/cli@55.0.36': apps/rn-desktop/patches/@expo/cli@55.0.36.patch
+  '@react-native-windows/cli@0.83.2': apps/rn-desktop/patches/@react-native-windows/cli@0.83.2.patch
