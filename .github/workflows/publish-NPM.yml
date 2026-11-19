@@ -9,7 +9,7 @@ on:
 
 jobs:
   app:
-    uses: chlbri/node-github-actions/.github/workflows/publish.yml@main
+    uses: chlbri/node-github-actions/.github/workflows/publish-vp.yml@main
     secrets: inherit
     with:
       type:
