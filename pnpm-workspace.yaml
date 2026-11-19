@@ -1,5 +1,4 @@
 packages:
-  - 'apps/rn-desktop'
   - 'packages/core'
   - 'packages/__tests__/project1'
 
@@ -32,8 +31,6 @@ catalog:
 overrides:
   vite@*: 'catalog:'
   vitest@*: 'catalog:'
-  react: 19.2.0
-  react-native: 0.83.10
 
 peerDependencyRules:
   allowAny:
@@ -43,7 +40,3 @@ peerDependencyRules:
   allowedVersions:
     vite: '*'
     vitest: '*'
-
-patchedDependencies:
-  '@expo/cli@55.0.36': apps/rn-desktop/patches/@expo/cli@55.0.36.patch
-  '@react-native-windows/cli@0.83.2': apps/rn-desktop/patches/@react-native-windows/cli@0.83.2.patch

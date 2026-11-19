@@ -157,15 +157,6 @@ export default defineConfig({
           'prefer-spread': 'error',
         },
       },
-      {
-        files: ['apps/rn-desktop/**'],
-        plugins: ['react'],
-        env: { browser: true, node: true },
-      },
-      {
-        files: ['apps/rn-desktop/*.js'],
-        rules: { 'typescript/no-require-imports': 'off' },
-      },
     ],
   },
 
@@ -224,7 +215,10 @@ export default defineConfig({
     coverage: {
       enabled: true,
       reportsDirectory: '.coverage',
-      provider: 'v8',
+      // Use the official v8 provider through the custom-provider slot so
+      // vite-plus skips its own provider/runner version check.
+      provider: 'custom',
+      customProviderModule: '@vitest/coverage-v8',
       exclude: [
         ...defaultExclude,
         '**/types.ts',
