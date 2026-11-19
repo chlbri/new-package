@@ -26,6 +26,10 @@
     "**/rolldown.config.ts",
     "**/vitest.config.ts",
     "**/vite.config.ts",
-    "**/vitest.setup.ts"
+    "**/vitest.setup.ts",
+    "**/.output/**",
+    "**/.nitro/**",
+    "**/.tanstack/**",
+    "**/node_modules/**"
   ]
 }
